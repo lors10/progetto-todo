@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Todo List</title>
+    <title>Todo</title>
 
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 
@@ -17,86 +17,25 @@
 
     <!-- Form -->
     <div>
-        <form method="post" action="#">
 
-            <input type="text" name="todo" id="todo" placeholder="Cosa hai da fare oggi?">
-
-        </form>
-    </div>
-
-    <!-- List -->
-    <div>
-
-        <ul id="todo-list">
-
-            <li>
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Comprare il latte</p>
-
-                <div class="importance low">!</div>
-
-                <a href="#">x</a>
-            </li>
-
-            <li>
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Andare dal veterinario per il cane</p>
-
-                <div class="importance middle">!!</div>
-
-                <a href="#">x</a>
-            </li>
-
-            <li class="done">
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Incontrare Maria</p>
-
-                <div class="importance high">!!!</div>
-
-                <a href="#">x</a>
-            </li>
-
-            <li>
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Chiamare Roberto</p>
-
-                <div class="importance middle">!!</div>
-
-                <a href="#">x</a>
-            </li>
-
-            <li>
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Portare fuori la spazzatura</p>
-
-                <div class="importance high">!!!</div>
-
-                <a href="#">x</a>
-            </li>
-
-        </ul>
+        <h1 id="title-start-message">Todo helps peaple or Teams to stay focused on their works!</h1>
+        <p id="text-start-message">
+            Collaborate, manage projects, and reach new productivity peaks.
+            From high rises to the home office,
+            the way your team works is unique—accomplish it all with Todo.
+        </p>
 
     </div>
+
+    <form>
+        <div id="button-container">
+
+            <button type="submit" class="button"><a href="identifications/signup.php"> Sign up </a></button>
+            <button type="submit" class="button"><a href="identifications/login.php"> Log in </a></button>
+
+        </div>
+    </form>
+
 
 </div>
 
