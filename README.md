@@ -1,10 +1,8 @@
 # ciao-mondo
-Creazione della mia repository di prova
+Creazione della mia repository per studio 
 
-Ciao mi chiamo Lorenzo.
-Questa sera sto imparando ad utilizzare Github.
+Ciao mi chiamo Lorenzo. 
+
+Questa repository è per studiare e provare le cose che sto facendo.
 
 Alla prossima.
-
-
-ciao
