@@ -13,6 +13,10 @@
 
 <body>
 
+<?php
+    echo "Ciao!";
+?>
+
 <div id="container">
 
     <!-- Form -->
