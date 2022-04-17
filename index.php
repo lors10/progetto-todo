@@ -30,8 +30,15 @@
     <form>
         <div id="button-container">
 
-            <button type="submit" class="button" id="button-login"><a class="link-button" href="identifications/signup.php"> Sign up </a></button>
-            <button type="submit" class="button"><a class="link-button" href="identifications/login.php"> Log in </a></button>
+            <div>
+                <button type="submit" class="button" id="button-login"><a class="link-button" href="identifications/signup.php"> Sign up </a></button>
+            </div>
+
+            <br>
+
+            <div>
+                <button type="submit" class="button"><a class="link-button" href="identifications/login.php"> Log in </a></button>
+            </div>
 
         </div>
     </form>
