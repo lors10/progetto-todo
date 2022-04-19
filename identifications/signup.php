@@ -20,7 +20,7 @@
     </div>
 
     <!-- Form -->
-    <form>
+    <form method="post" action="#">
 
         <input type="text" name="first-name" placeholder="First Name" required>
         <input type="text" name="Last-name" placeholder="Last Name" required>

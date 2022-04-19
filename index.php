@@ -27,7 +27,7 @@
 
     </div>
 
-    <form>
+    <form method="post" action="#">
         <div id="button-container">
 
             <div>
