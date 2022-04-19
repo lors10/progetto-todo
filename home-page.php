@@ -1,3 +1,41 @@
+<?php
+
+    // creo un array multidimensionale che conterrà i dati di tutti i todo
+    // trasformo gli array in oggetti "standard" scrivendo (object) nome_array
+    $todo_list = array(
+        (object) array(
+                    'completed' => false,
+                    'text' => 'Comprare il latte',
+                    'importance' => 1
+            ),
+
+        (object) array(
+                'completed' => false,
+                'text' => 'Andare dal veterinario per il cane',
+                'importance' => 2
+            ),
+
+        (object) array(
+                'completed' => true,
+                'text' => 'Incontrare Maria',
+                'importance' => 3
+            ),
+
+        (object) array(
+                'completed' => false,
+                'text' => 'Chiamare Roberto',
+                'importance' => 2
+            ),
+
+        (object) array(
+                'completed' => false,
+                'text' => 'Portare fuori la spazzatura',
+                'importance' => 3
+            )
+    );
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -29,70 +67,61 @@
 
         <ul id="todo-list">
 
-            <li>
+            <?php foreach ($todo_list as $todo) : ?>
+            <li class="
+            <?php if ($todo->completed) {
+                echo 'done';
+            }
+                        ?>">
 
                 <div>
                     <span></span>
                 </div>
 
-                <p>Comprare il latte</p>
+                <p><?php echo $todo->text; ?></p>
 
-                <div class="importance low">!</div>
+                <div class="importance <?php
 
-                <a href="#">x</a>
-            </li>
+                    switch ($todo->importance) {
 
-            <li>
+                        case 1:
+                            echo 'low';
+                            break;
+                        case 2:
+                            echo 'middle';
+                            break;
+                        case 3:
+                            echo 'high';
+                            break;
+                        default:
+                            '';
+                            break;
 
-                <div>
-                    <span></span>
-                </div>
+                    }
 
-                <p>Andare dal veterinario per il cane</p>
+                ?>"><?php
+                    switch ($todo->importance) {
 
-                <div class="importance middle">!!</div>
+                        case 1:
+                            echo '!';
+                            break;
+                        case 2:
+                            echo '!!';
+                            break;
+                        case 3:
+                            echo '!!!';
+                            break;
+                        default:
+                            '';
+                            break;
 
-                <a href="#">x</a>
-            </li>
-
-            <li class="done">
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Incontrare Maria</p>
-
-                <div class="importance high">!!!</div>
-
-                <a href="#">x</a>
-            </li>
-
-            <li>
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Chiamare Roberto</p>
-
-                <div class="importance middle">!!</div>
+                    }
+                    ?></div>
 
                 <a href="#">x</a>
+
             </li>
-
-            <li>
-
-                <div>
-                    <span></span>
-                </div>
-
-                <p>Portare fuori la spazzatura</p>
-
-                <div class="importance high">!!!</div>
-
-                <a href="#">x</a>
-            </li>
+            <?php endforeach; ?>
 
         </ul>
 
