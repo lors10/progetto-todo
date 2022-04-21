@@ -1,40 +1,40 @@
 <?php
+    include_once "database/connection.php";
 
-    // creo un array multidimensionale che conterrà i dati di tutti i todo
-    // trasformo gli array in oggetti "standard" scrivendo (object) nome_array
-    $todo_list = array(
-        (object) array(
-                    'completed' => false,
-                    'text' => 'Comprare il latte',
-                    'importance' => 1
-            ),
+    // query
+    $query = "SELECT * FROM todo WHERE idUser = 1";
 
-        (object) array(
-                'completed' => false,
-                'text' => 'Andare dal veterinario per il cane',
-                'importance' => 2
-            ),
+    // query tramite connessione
+    $result = $connection->query($query);
 
-        (object) array(
-                'completed' => true,
-                'text' => 'Incontrare Maria',
-                'importance' => 3
-            ),
 
-        (object) array(
-                'completed' => false,
-                'text' => 'Chiamare Roberto',
-                'importance' => 2
-            ),
+// creo un array multidimensionale che conterrà i dati di tutti i todo
+// trasformo gli array in oggetti "standard" scrivendo (object) nome_array
+$todo_list = array();
 
-        (object) array(
-                'completed' => false,
-                'text' => 'Portare fuori la spazzatura',
-                'importance' => 3
-            )
-    );
 
-?>
+// per assicurarci di avere indietro dei dati e non un array di valori vuoto
+        if ($result->num_rows > 0) {
+            // si prendono tutte le righe dei risultati che arrivano dalla query
+            // si interpretano tutti i dati come array associativi
+            // 1) si stampa ciascuna parte dell'array nella var. $row
+            //
+            // 2) si stampano i dati delle righe all'interno dell'array $todo_list
+            // ESEMPIO MYSQLI_NUM si interpretano i dati in modo numerico
+            foreach ($result->fetch_all(MYSQLI_ASSOC) as $row) {
+                // 1)
+                //print_r($row);
+
+                // 2)
+                array_push($todo_list, (object) $row);
+            }
+
+        } else {
+
+            echo "Nessun todo trovato";
+        }
+
+    ?>
 
 <!DOCTYPE html>
 
