@@ -76,7 +76,7 @@ $todo_list = array();
 
                 <div>
                     <span>
-                        <a href="<?php echo 'database/u_todo.php?idTodo' . $todo->idTodo . '&idUser=1'?>"></a>
+                        <a href="<?php echo 'database/u_todo.php?idTodo=' . $todo->idTodo . '&idUser=1'?>"></a>
                     </span>
                 </div>
 
