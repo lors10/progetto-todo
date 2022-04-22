@@ -55,7 +55,7 @@ $todo_list = array();
 
     <!-- Form -->
     <div>
-        <form method="post" action="#">
+        <form method="post" action="database/c_todo.php">
 
             <input type="text" name="todo" id="todo" placeholder="Cosa hai da fare oggi?">
 
