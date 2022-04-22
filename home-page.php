@@ -102,7 +102,7 @@ $todo_list = array();
                     }
 
                 ?>">
-                     <?php
+                      <!--<?php
                         switch ($todo->importance) {
 
                             case 1:
@@ -119,10 +119,11 @@ $todo_list = array();
                                 break;
 
                     }
-                    ?>
+                    ?> -->
+                    <a id = "a2" href="#">!</a>
                 </div>
-
-                <a href="<?php echo 'database/d_todo.php?idTodo=' . $todo->idTodo . '&idUser=1'?>">x</a>
+                
+                <a id = "a1" href="<?php echo 'database/d_todo.php?idTodo=' . $todo->idTodo . '&idUser=1'?>" id="a1">x</a>
 
             </li>
             <?php endforeach; ?>
