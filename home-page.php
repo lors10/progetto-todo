@@ -101,26 +101,28 @@ $todo_list = array();
 
                     }
 
-                ?>"><?php
-                    switch ($todo->importance) {
+                ?>">
+                     <?php
+                        switch ($todo->importance) {
 
-                        case 1:
-                            echo '!';
-                            break;
-                        case 2:
-                            echo '!!';
-                            break;
-                        case 3:
-                            echo '!!!';
-                            break;
-                        default:
-                            '';
-                            break;
+                            case 1:
+                                echo '!';
+                                break;
+                            case 2:
+                                echo '!!';
+                                break;
+                            case 3:
+                                echo '!!!';
+                                break;
+                            default:
+                                '';
+                                break;
 
                     }
-                    ?></div>
+                    ?>
+                </div>
 
-                <a href="#">x</a>
+                <a href="<?php echo 'database/d_todo.php?idTodo=' . $todo->idTodo . '&idUser=1'?>">x</a>
 
             </li>
             <?php endforeach; ?>
