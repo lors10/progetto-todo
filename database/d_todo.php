@@ -2,8 +2,10 @@
 
     include_once "connection.php";
 
+    session_start();
+
     //query per cancellare un todo
-    $query = "DELETE FROM todo WHERE idUser = " . $_GET['idUser'] .
+    $query = "DELETE FROM todo WHERE idUser = " . $_SESSION['id'] .
                 " AND idTodo = " . $_GET['idTodo'];
 
     if ($connection->query($query) === TRUE) {

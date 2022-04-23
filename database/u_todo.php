@@ -2,9 +2,12 @@
 
     include_once "connection.php";
 
+    session_start();
+
     // query per conoscere la situazione attuale
-    $query = "SELECT * FROM todo WHERE idUser = " . $_GET['idUser'] .
-                " AND idTodo = " . $_GET['idTodo'];
+    $query = "SELECT * FROM todo WHERE idUser = " . $_SESSION['id'] . " AND idTodo = " . $_GET['idTodo'];
+
+    print_r($query);
 
     // query tramite connessione
     $result = $connection->query($query);
@@ -18,11 +21,11 @@
         // qui inserisco la query per aggiornare
         if ($todo['completed'] == 1) {
 
-            $query = "UPDATE todo SET completed = 0 WHERE idUser = " . $_GET['idUser'] .
+            $query = "UPDATE todo SET completed = 0 WHERE idUser = " . $_SESSION['id'] .
                         " AND idTodo = " . $_GET['idTodo'];
         } else {
 
-            $query = "UPDATE todo SET completed = 1 WHERE idUser = " . $_GET['idUser'] .
+            $query = "UPDATE todo SET completed = 1 WHERE idUser = " . $_SESSION['id'] .
                 " AND idTodo = " . $_GET['idTodo'];
         }
 

@@ -2,8 +2,10 @@
 
     include_once "connection.php";
 
+    session_start();
+
     $query = "INSERT INTO todo (idUser, text, completed, createdAt) 
-                VALUES (1, '" . $_POST['todo'] . "', 0, '" . date('Y-m-d H:i:s') . "')";
+                VALUES ('" . $_SESSION['id'] ."', '" . $_POST['todo'] . "', 0, '" . date('Y-m-d H:i:s') . "')";
 
     if ($connection->query($query) === TRUE) {
 

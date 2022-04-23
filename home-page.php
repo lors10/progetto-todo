@@ -1,8 +1,14 @@
 <?php
     include_once "database/connection.php";
 
+    session_start();
+
+
+
     // query
-    $query = "SELECT * FROM todo WHERE idUser = 1";
+    $query = "SELECT * FROM todo WHERE idUser = " . $_SESSION['id'];
+
+    $user = $_SESSION['id'];
 
     // query tramite connessione
     $result = $connection->query($query);
@@ -51,10 +57,28 @@ $todo_list = array();
 
 <body>
 
+<div>
+    <?php
+        if($_SESSION['name']) { ?>
+
+        <h1>Welcome <?php echo $_SESSION["name"]; ?> </h1>
+
+        <h2><a href="identifications/logout.php">Logout</a></h2>
+            <?php
+    } else {
+
+        echo "<h1>Please login first .</h1>";
+    }
+
+    ?>
+
+</div>
+
 <div id="container">
 
     <!-- Form -->
     <div>
+
         <form method="post" action="database/c_todo.php">
 
             <input type="text" name="todo" id="todo" placeholder="Cosa hai da fare oggi?">
@@ -76,7 +100,7 @@ $todo_list = array();
 
                 <div>
                     <span>
-                        <a href="<?php echo 'database/u_todo.php?idTodo=' . $todo->idTodo . '&idUser=1'?>"></a>
+                        <a href="<?php echo 'database/u_todo.php?idUser?idTodo=' . $user . " " .  $todo->idTodo?>"></a>
                     </span>
                 </div>
 
