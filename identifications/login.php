@@ -20,7 +20,7 @@
     </div>
 
     <!-- Form -->
-    <form method="post" action="../database/authenticate.php">
+    <form method="post" action="authentication_login.php">
 
         <input type="email" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>

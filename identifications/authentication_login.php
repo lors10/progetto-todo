@@ -1,8 +1,7 @@
 <?php
 
-    include_once "connection.php";
-
-    session_start();
+    include_once "../database/connection.php";
+    include_once "../sessions/session-start.php";
 
     // Now we check if the data from the login form was submitted, isset() will check if the data exists.
     if ( !isset($_POST['username'], $_POST['password']) ) {
@@ -11,8 +10,6 @@
     } else {
         // echo "username" . $_POST['username'] . "password" . $_POST['password'];
     }
-
-    // FUNZIONA
 
     // query per selezionare utente che si sta loggando
     // $query = "SELECT * FROM user WHERE email = " . $_POST['username'];

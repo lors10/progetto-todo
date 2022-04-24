@@ -1,8 +1,7 @@
 <?php
 
     include_once "connection.php";
-
-    session_start();
+    include_once "../sessions/session-start.php";
 
     //query per cancellare un todo
     $query = "DELETE FROM todo WHERE idUser = " . $_SESSION['id'] .

@@ -1,13 +1,13 @@
 <?php
 
     include_once "connection.php";
+    include_once "../sessions/session-start.php";
 
-    session_start();
 
     // query per conoscere la situazione attuale
-    $query = "SELECT * FROM todo WHERE idUser = " . $_SESSION['id'] . " AND idTodo = " . $_GET['idTodo'];
+    $query = "SELECT * FROM todo WHERE idUser = " . $_GET['idUser'] . "AND idTodo = " . $_GET['idTodo'];
 
-    print_r($query);
+    //print_r($query);
 
     // query tramite connessione
     $result = $connection->query($query);
@@ -33,7 +33,7 @@
         if ($connection->query($query) === TRUE) {
 
             // redirect alla pagina della lista di todo
-            header("Location: ../home-page.php");
+            // header("Location: ../home-page.php");
 
         } else {
 

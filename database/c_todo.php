@@ -1,8 +1,9 @@
 <?php
 
     include_once "connection.php";
+    include_once "../sessions/session-start.php";
 
-    session_start();
+
 
     $query = "INSERT INTO todo (idUser, text, completed, createdAt) 
                 VALUES ('" . $_SESSION['id'] ."', '" . $_POST['todo'] . "', 0, '" . date('Y-m-d H:i:s') . "')";

@@ -20,18 +20,15 @@
     </div>
 
     <!-- Form -->
-    <form method="post" action="#">
+    <form method="post" action="autentication_signup.php">
 
-        <input type="text" name="first-name" placeholder="First Name" required>
-        <input type="text" name="Last-name" placeholder="Last Name" required>
+        <input type="text" name="firstname" placeholder="First Name" required>
+        <input type="text" name="lastname" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" id="password" placeholder="Password" required>
-        <input type="password" name="confirm-password" id="confirm_password" placeholder="Confirm Password" required>
+        <input type="password" name="confirmpassword" id="confirm_password" placeholder="Confirm Password">
 
-        <p class="span-style">
-            <span>Forget password ?</span>
-        </p>
-
-        <button class="button" type="submit" onclick="validatePassword()"><a class="link-button"> SIGN UP </a></button>
+        <input type="submit" onclick="validatePassword()" value="Sign Up">
         <button class="button" type="button"><a class="link-button" href="../index.php"> BACK </a></button>
 
     </form>

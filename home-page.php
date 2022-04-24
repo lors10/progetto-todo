@@ -1,25 +1,22 @@
 <?php
     include_once "database/connection.php";
-
-    session_start();
-
+    include_once "sessions/session-start.php";
 
 
     // query
     $query = "SELECT * FROM todo WHERE idUser = " . $_SESSION['id'];
 
-    $user = $_SESSION['id'];
-
     // query tramite connessione
     $result = $connection->query($query);
 
 
-// creo un array multidimensionale che conterrà i dati di tutti i todo
-// trasformo gli array in oggetti "standard" scrivendo (object) nome_array
-$todo_list = array();
+    // creo un array multidimensionale che conterrà i dati di tutti i todo
+    // trasformo gli array in oggetti "standard" scrivendo (object) nome_array
+    $todo_list = array();
+    $user = $_SESSION['id'];
 
 
-// per assicurarci di avere indietro dei dati e non un array di valori vuoto
+    // per assicurarci di avere indietro dei dati e non un array di valori vuoto
         if ($result->num_rows > 0) {
             // si prendono tutte le righe dei risultati che arrivano dalla query
             // si interpretano tutti i dati come array associativi
@@ -100,7 +97,7 @@ $todo_list = array();
 
                 <div>
                     <span>
-                        <a href="<?php echo 'database/u_todo.php?idUser?idTodo=' . $user . " " .  $todo->idTodo?>"></a>
+                        <a href="<?php echo 'database/u_todo.php?idUser='. $user . 'idTodo=' . $todo->idTodo ?>"></a>
                     </span>
                 </div>
 
@@ -125,8 +122,7 @@ $todo_list = array();
 
                     }
 
-                ?>">
-                      <!--<?php
+                ?>"><?php
                         switch ($todo->importance) {
 
                             case 1:
@@ -143,8 +139,8 @@ $todo_list = array();
                                 break;
 
                     }
-                    ?> -->
-                    <a id = "a2" href="#">!</a>
+                    ?>
+                    <!-- <a id = "a2" href="#">!</a> -->
                 </div>
                 
                 <a id = "a1" href="<?php echo 'database/d_todo.php?idTodo=' . $todo->idTodo . '&idUser=1'?>" id="a1">x</a>
