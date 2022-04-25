@@ -1,13 +1,12 @@
 <?php
 
     include_once "connection.php";
-    include_once "../sessions/session-start.php";
+    //include_once "../sessions/session-start.php";
 
 
     // query per conoscere la situazione attuale
-    $query = "SELECT * FROM todo WHERE idUser = " . $_GET['idUser'] . "AND idTodo = " . $_GET['idTodo'];
+    $query = "SELECT * FROM todo WHERE idUser = " . $_GET['idUser'];
 
-    //print_r($query);
 
     // query tramite connessione
     $result = $connection->query($query);
@@ -18,14 +17,15 @@
         // query come array associativo
         $todo = $result->fetch_assoc();
 
+
         // qui inserisco la query per aggiornare
         if ($todo['completed'] == 1) {
 
-            $query = "UPDATE todo SET completed = 0 WHERE idUser = " . $_SESSION['id'] .
-                        " AND idTodo = " . $_GET['idTodo'];
+            $query = "UPDATE todo SET completed = 0 WHERE idUser = " . $_GET['idUser'] .
+                " AND idTodo = " . $_GET['idTodo'];
         } else {
 
-            $query = "UPDATE todo SET completed = 1 WHERE idUser = " . $_SESSION['id'] .
+            $query = "UPDATE todo SET completed = 1 WHERE idUser = " . $_GET['idUser'] .
                 " AND idTodo = " . $_GET['idTodo'];
         }
 
@@ -33,7 +33,7 @@
         if ($connection->query($query) === TRUE) {
 
             // redirect alla pagina della lista di todo
-            // header("Location: ../home-page.php");
+            header("Location: ../home-page.php");
 
         } else {
 
@@ -41,13 +41,15 @@
             echo "Errore: " . $query . '<br />' . $connection->connect_error;
 
         }
-        
-        
 
     } else {
 
         echo "Nessun todo trovato";
-}
+    }
+
+
+
+
 
 
 

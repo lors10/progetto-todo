@@ -58,7 +58,7 @@
     <?php
         if($_SESSION['name']) { ?>
 
-        <h1>Welcome <?php echo $_SESSION["name"]; ?> </h1>
+        <h1>Welcome <?php echo $_SESSION['name']; ?> </h1>
 
         <h2><a href="identifications/logout.php">Logout</a></h2>
             <?php
@@ -97,7 +97,7 @@
 
                 <div>
                     <span>
-                        <a href="<?php echo 'database/u_todo.php?idUser='. $user . 'idTodo=' . $todo->idTodo ?>"></a>
+                        <a href="<?php echo 'database/u_todo.php?idUser='. $user . '&idTodo=' . $todo->idTodo ?>"></a>
                     </span>
                 </div>
 
