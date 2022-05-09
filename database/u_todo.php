@@ -9,6 +9,7 @@
 
 
     // query tramite connessione
+    //$connection ="";
     $result = $connection->query($query);
 
 

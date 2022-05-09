@@ -8,7 +8,7 @@
                 " AND idTodo = " . $_GET['idTodo'];
 
 
-
+    //$connection ="";
     if ($connection->query($query) === TRUE) {
 
         // redirect alla pagina della lista di todo
