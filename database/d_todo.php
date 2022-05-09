@@ -7,6 +7,8 @@
     $query = "DELETE FROM todo WHERE idUser = " . $_SESSION['id'] .
                 " AND idTodo = " . $_GET['idTodo'];
 
+
+
     if ($connection->query($query) === TRUE) {
 
         // redirect alla pagina della lista di todo
